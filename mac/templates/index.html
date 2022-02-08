@@ -1,0 +1,77 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Welcome To My Awesome Cart</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+  <h1 class="display-4">Welcome To My Amazing Cart</h1>
+  <p class="lead">Website Built for Online Shopping </p>
+  <hr class="my-4">
+  <p>It conatins all types of Items which will be useful in daily needs </p>
+  <a class="btn btn-primary btn-lg" href="/shop" role="button">Go To Shop</a>
+  
+</div>
+
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+
+
+
+
+{% if user.is_authenticated %}
+<h3>Hello {{fname}}!</h3>
+<h4>You're successfully logged in.</h4>
+<button type="submit"class="btn btn-success mr-3" style="background-color: #4CAF50; /* Green */
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;"><a href="/signout">SignOut</a></button>
+{% else %}
+<a href="/signup" style="color:red;">SignUp</a></button>
+<br/>
+<br/>
+<a href="/signin" style="color:green;">LogIn</a></button>
+{% endif %}
+ 
+
+  
+  
+
+
+    
+    
+ 
+ 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
